@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.project3design.Questionnaire">
+
+    <TextView
+        android:id="@+id/wallBwidth"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginLeft="16dp"
+        android:text="Wall B Width:"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="77dp"
+        app:layout_constraintTop_toBottomOf="@+id/wallAwidth" />
+
+    <TextView
+        android:id="@+id/wallAwidth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wall A Width:"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <EditText
+        android:id="@+id/wallAwidthValue"
+        android:layout_width="60pt"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:ems="10"
+        android:inputType="numberSigned"
+        app:layout_constraintBaseline_toBaselineOf="@+id/wallAwidth"
+        app:layout_constraintLeft_toRightOf="@+id/wallAwidth" />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="60pt"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberSigned"
+        app:layout_constraintBaseline_toBaselineOf="@+id/wallBwidth"
+        app:layout_constraintLeft_toRightOf="@+id/wallBwidth"
+        android:layout_marginLeft="16dp" />
+
+    <TextView
+        android:id="@+id/wallCwidth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wall C Width:"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"
+        app:layout_constraintLeft_toRightOf="@+id/wallAwidthValue"
+        android:layout_marginLeft="32dp" />
+
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="60pt"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberSigned"
+        app:layout_constraintBaseline_toBaselineOf="@+id/wallCwidth"
+        app:layout_constraintLeft_toRightOf="@+id/wallCwidth"
+        android:layout_marginLeft="16dp" />
+
+    <TextView
+        android:id="@+id/wallDwidth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wall D Width:"
+        app:layout_constraintLeft_toRightOf="@+id/editText5"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="77dp"
+        app:layout_constraintTop_toBottomOf="@+id/wallCwidth" />
+
+    <EditText
+        android:id="@+id/editText7"
+        android:layout_width="60pt"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberSigned"
+        app:layout_constraintBaseline_toBaselineOf="@+id/wallDwidth"
+        app:layout_constraintLeft_toRightOf="@+id/wallDwidth"
+        android:layout_marginLeft="16dp" />
+
+    <TextView
+        android:id="@+id/wallsHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Walls Height:"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="77dp"
+        app:layout_constraintTop_toBottomOf="@+id/wallBwidth" />
+
+    <EditText
+        android:id="@+id/editText8"
+        android:layout_width="60pt"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:ems="10"
+        android:inputType="numberSigned"
+        app:layout_constraintBaseline_toBaselineOf="@+id/wallsHeight"
+        app:layout_constraintLeft_toRightOf="@+id/wallsHeight" />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:layout_marginRight="16dp"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
