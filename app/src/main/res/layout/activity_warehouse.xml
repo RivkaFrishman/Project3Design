@@ -4,81 +4,499 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scrollIndicators="right|end"
     tools:context="com.example.android.project3design.Warehouse">
 
-    <TextView
-        android:id="@+id/Kitchen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="56dp"
-        android:text="Kitchen"
-        app:layout_constraintBottom_toTopOf="@+id/Bedroom"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/Bedroom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:text="Bedroom"
-        app:layout_constraintBottom_toTopOf="@+id/LivingRoom"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
-    <TextView
-        android:id="@+id/LivingRoom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:text="Living Room"
-        app:layout_constraintBottom_toTopOf="@+id/Bathroom"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
-    <TextView
-        android:id="@+id/Bathroom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:text="Bathroom"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
-    <SearchView
-        android:id="@+id/searchView"
-        android:layout_width="239dp"
-        android:layout_height="35dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginLeft="16dp"
+    <ScrollView
+        android:layout_width="576dp"
+        android:layout_height="295dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/Kitchen"
+        android:paddingTop="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
-    <Button
-        android:id="@+id/nextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
-        android:layout_marginLeft="200dp"
-        android:layout_marginTop="8dp"
-        android:text="next"
-        app:layout_constraintStart_toEndOf="@+id/searchView"
-        app:layout_constraintTop_toTopOf="parent" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
+            <SearchView
+                android:id="@+id/search"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/nextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="230dp"
+                android:layout_toRightOf="@id/search"
+                android:text="next" />
+
+            <TextView
+                android:id="@+id/Instructions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/search"
+                android:layout_centerHorizontal="true"
+                android:text="Please choose furniture from the following catagories:"/>
+
+            <TextView
+                android:id="@+id/InstructionsContinue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Instructions"
+                android:layout_marginTop="16dp"
+                android:layout_centerHorizontal="true"
+                android:text="Press 'next' to skip this step and continue..."/>
+
+            <TextView
+                android:id="@+id/BedroomText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/InstructionsContinue"
+                android:layout_marginTop="16dp"
+                android:layout_centerHorizontal="true"
+                android:text="Bedroom" />
+
+            <HorizontalScrollView
+                android:id="@+id/scrollBedroom"
+                android:layout_width="500dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/BedroomText"
+                android:layout_marginTop="8dp">
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/nighttableBrown"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/nighttablebrown" />
+
+                    <ImageView
+                        android:id="@+id/bed"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/bed" />
+
+                    <ImageView
+                        android:id="@+id/sofaRed"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/sofa" />
+
+                    <ImageView
+                        android:id="@+id/nighttableWhite"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/nighttablewhite" />
+
+                    <ImageView
+                        android:id="@+id/mirrorLong"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/mirror" />
+
+                    <ImageView
+                        android:id="@+id/singleBed"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/singlebed" />
+
+                    <ImageView
+                        android:id="@+id/closet"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/closet" />
+                </TableRow>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/LivingroomText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/scrollBedroom"
+                android:layout_marginTop="16dp"
+                android:layout_centerHorizontal="true"
+                android:text="Livingroom" />
+
+            <HorizontalScrollView
+                android:id="@+id/scrollLivingroom"
+                android:layout_width="500dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/LivingroomText"
+                android:layout_marginTop="8dp">
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/sofablack"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/sofablack" />
+
+                    <ImageView
+                        android:id="@+id/sofablue"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/sofablue" />
+
+                    <ImageView
+                        android:id="@+id/sofawhite"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/sofawhite" />
+
+                    <ImageView
+                        android:id="@+id/cftablelong"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/cftablelong" />
+
+                    <ImageView
+                        android:id="@+id/cftableround"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/cftableround" />
+
+                    <ImageView
+                        android:id="@+id/cftablespecial"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/cftablespecial" />
+
+                    <ImageView
+                        android:id="@+id/rugblackbeige"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/rugblackbeige" />
+
+                    <ImageView
+                        android:id="@+id/rugbrown"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/rugbrown" />
+
+                    <ImageView
+                        android:id="@+id/bookcasebeehive"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/bookcasebeehive" />
+
+                    <ImageView
+                        android:id="@+id/bookcaseclasic"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/bookcaseclasic" />
+
+                    <ImageView
+                        android:id="@+id/bookcaseglass"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/bookcaseglass" />
+
+                    <ImageView
+                        android:id="@+id/bookcasevintage"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/bookcasevintage" />
+
+                    <ImageView
+                        android:id="@+id/diningtablelong"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/diningtablelong" />
+
+                    <ImageView
+                        android:id="@+id/diningtableround"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/diningtableround" />
+
+                    <ImageView
+                        android:id="@+id/diningtablesmall"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/diningtablesmall" />
+                </TableRow>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/BathroomText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/scrollLivingroom"
+                android:layout_marginTop="16dp"
+                android:layout_centerHorizontal="true"
+                android:text="Bathroom" />
+
+            <HorizontalScrollView
+                android:id="@+id/scrollBathroom"
+                android:layout_width="500dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/BathroomText"
+                android:layout_marginTop="8dp">
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/bathroomsinkcabinet"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/bathroomsinkcabinet" />
+
+                    <ImageView
+                        android:id="@+id/bathroomsinkclassic"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/bathroomsinkclassic" />
+
+                    <ImageView
+                        android:id="@+id/bathroomsinkmodern"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/bathroomsinkmodern" />
+
+                    <ImageView
+                        android:id="@+id/toiletclassic"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/toiletclassic" />
+
+                    <ImageView
+                        android:id="@+id/toiletmodern"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/toiletmodern" />
+
+                    <ImageView
+                        android:id="@+id/showerdoors"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/showerdoors" />
+
+                    <ImageView
+                        android:id="@+id/showerround"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/showerround" />
+
+                    <ImageView
+                        android:id="@+id/showerspecial"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/showerspecial" />
+
+                    <ImageView
+                        android:id="@+id/showersquare"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/showersquare" />
+
+                </TableRow>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/KitchenText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/scrollBathroom"
+                android:layout_marginTop="16dp"
+                android:layout_centerHorizontal="true"
+                android:text="Kitchen" />
+
+            <HorizontalScrollView
+                android:id="@+id/scrollKitchen"
+                android:layout_width="500dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/KitchenText"
+                android:layout_marginTop="8dp">
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/fridgeclassic"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/fridgeclassic" />
+
+                    <ImageView
+                        android:id="@+id/fridgemodern"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/fridgemodern" />
+
+                    <ImageView
+                        android:id="@+id/fridgespecial"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/fridgespecial" />
+
+                    <ImageView
+                        android:id="@+id/ovenbasic"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/ovenbasic" />
+
+                    <ImageView
+                        android:id="@+id/ovenbig"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/ovenbig" />
+
+                    <ImageView
+                        android:id="@+id/ovenclassic"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/ovenclassic" />
+
+                    <ImageView
+                        android:id="@+id/stovebig"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/stovebig" />
+
+                    <ImageView
+                        android:id="@+id/stovesmall"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/stovesmall" />
+
+                    <ImageView
+                        android:id="@+id/kitchensinkclassic"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/kitchensinkclassic" />
+
+                    <ImageView
+                        android:id="@+id/kitchensinkspecial"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/kitchensinkspecial" />
+
+                    <ImageView
+                        android:id="@+id/kitchensinktwo"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/kitchensinktwo" />
+
+                    <ImageView
+                        android:id="@+id/cabinetbrown"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/cabinetbrown" />
+
+                    <ImageView
+                        android:id="@+id/cabinetwhite"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat="@drawable/cabinetwhite" />
+
+                    </TableRow>
+                </HorizontalScrollView>
+        </RelativeLayout>
+    </ScrollView>
 </android.support.constraint.ConstraintLayout>
